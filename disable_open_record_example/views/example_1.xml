@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_form_child" model="ir.ui.view">
+            <field name="name">view_form_child</field>
+            <field name="model">de.codeschneider.child</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="This is a child of a parent out of many">
+                            <field name="user_id"></field>
+                            <field name="property_1"></field>
+                            <field name="property_2"></field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_parents">
+            <field name="name">Parents</field>
+            <field name="res_model">de.codeschneider.parent</field>
+        </record>
+        <record id="view_form_parent_objects" model="ir.ui.view">
+            <field name="name">Parent Objects</field>
+            <field name="model">de.codeschneider.parent</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="This is some meaningful Wrapper around some data and a collection">
+                            <field name="name"></field>
+                            <field name="property_1"></field>
+                            <field name="child_ids">
+                                <tree open="false">
+                                    <field name="user_id"></field>
+                                    <field name="property_1"></field>
+                                    <field name="property_2"></field>
+                                    <button name="open_this" type="object" string="Details"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <menuitem name="Some Parents" id="menu_root" sequence="110" action="action_parents"/>
+
+    </data>
+</openerp>

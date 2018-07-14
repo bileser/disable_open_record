@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="disable_open_record_js" name="String value" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/disable_open_record/static/src/js/disable_open_record.js"></script>
+            </xpath>
+        </template>
+    </data>
+</openerp>
