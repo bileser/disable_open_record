@@ -11,7 +11,7 @@ This is not great usability!
 
 **The solution**
 
-Install the module *disable_open_record*. Now, if you define a tree inside the One2many field you can give it an `open="false"` attribute. The line belonging to such a tree will be unclickable and gets the CSS style `cursor: auto`. Then, if you want the details of this line to be shown in a form for the objects of this form to be available to be clicked on, you should place a button inside this tree bound to a method which opens the form like this:
+Install the module `disable_open_record`. Now, if you define a tree inside the One2many field you can give it an `open="false"` attribute. The line belonging to such a tree will be unclickable and gets the CSS style `cursor: auto`. Then, if you want the details of this line to be shown in a form for the objects of this form to be available to be clicked on, you should place a button inside this tree bound to a method which opens the form like this:
 
 ```
     @api.multi
